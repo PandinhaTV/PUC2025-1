@@ -5,14 +5,16 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("Input")]
-    public InputActionReference interactAction; // E / Gamepad X
+    public InputActionReference interactAction;
     public float interactRadius = 3f;
     public LayerMask interactableMask;
     public InputActionReference moveAction;
     public InputActionReference jumpAction;
+
     [Header("Camera")]
     public Transform cameraTransform;
     public float moveSpeed = 5f;
+    public float rotationSpeed = 10f;
     public float gravity = -9.81f;
     public float jumpHeight = 1.5f;
 
@@ -21,9 +23,10 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     [Header("UI")]
-    public InteractionUI interactionUI; // Reference to your UI script
+    public InteractionUI interactionUI;
 
     private IInteractable currentTarget;
+
     void Awake() => controller = GetComponent<CharacterController>();
 
     void OnEnable()
@@ -42,19 +45,37 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
-
         DetectNearbyInteractables();
         HandleInteraction();
+
         Vector2 input = moveAction.action.ReadValue<Vector2>();
 
-        // Camera-relative movement direction
-        Vector3 move = cameraTransform.forward * input.y + cameraTransform.right * input.x;
-        move.y = 0f;
-        move.Normalize();
+        // Ignore tiny inputs
+        if (input.sqrMagnitude < 0.01f)
+        {
+            ApplyGravityAndJump();
+            return;
+        }
 
-        controller.Move(move * moveSpeed * Time.deltaTime);
+        // ✅ Calculate target angle based on camera orientation and input direction
+        float targetAngle = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
 
+        // Smoothly rotate the player
+        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationVelocity, 0.1f);
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+        // Move in the direction the character is facing
+        Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+        controller.Move(moveDir.normalized * moveSpeed * Time.deltaTime);
+
+        ApplyGravityAndJump();
+    }
+
+    private float rotationVelocity; // Used for smooth turning
+
+    void ApplyGravityAndJump()
+    {
+        
         isGrounded = controller.isGrounded;
         if (isGrounded && velocity.y < 0)
             velocity.y = -2f;
@@ -65,11 +86,10 @@ public class PlayerController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
-    
+
     void DetectNearbyInteractables()
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, interactRadius, interactableMask);
-
         IInteractable closest = null;
         float closestDist = float.MaxValue;
 
@@ -90,30 +110,21 @@ public class PlayerController : MonoBehaviour
         {
             currentTarget = closest;
             if (currentTarget != null)
-            {
-                // Show prompt above object
                 interactionUI.ShowPrompt(currentTarget.GetPromptText(), (currentTarget as MonoBehaviour).transform);
-            }
             else
-            {
                 interactionUI.HidePrompt();
-            }
         }
     }
 
     void HandleInteraction()
     {
         if (currentTarget != null && interactAction.action.WasPressedThisFrame())
-        {
             currentTarget.Interact(gameObject);
-        }
     }
 
-    // Optional: visualize the radius in editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, interactRadius);
     }
-    
 }
