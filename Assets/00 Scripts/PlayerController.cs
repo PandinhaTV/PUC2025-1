@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask interactableMask;
     public InputActionReference moveAction;
     public InputActionReference jumpAction;
+    public InputActionReference sprintAction;
 
     [Header("Camera")]
     public Transform cameraTransform;
@@ -33,18 +34,29 @@ public class PlayerController : MonoBehaviour
     {
         moveAction.action.Enable();
         jumpAction.action.Enable();
+        sprintAction.action.Enable();
         interactAction.action.Enable();
+        
     }
 
     void OnDisable()
     {
         moveAction.action.Disable();
         jumpAction.action.Disable();
+        sprintAction.action.Disable();
         interactAction.action.Disable();
     }
 
     void Update()
     {
+        if (sprintAction.action.IsInProgress())
+        {
+            moveSpeed = 7.5f;
+        }
+        else
+        {
+            moveSpeed = 5f;
+        }
         DetectNearbyInteractables();
         HandleInteraction();
 
@@ -97,9 +109,11 @@ public class PlayerController : MonoBehaviour
         {
             if (hit.TryGetComponent<IInteractable>(out IInteractable interactable))
             {
+                
                 float dist = Vector3.Distance(transform.position, hit.transform.position);
                 if (dist < closestDist)
                 {
+                    
                     closest = interactable;
                     closestDist = dist;
                 }
@@ -108,6 +122,7 @@ public class PlayerController : MonoBehaviour
 
         if (closest != currentTarget)
         {
+            
             currentTarget = closest;
             if (currentTarget != null)
                 interactionUI.ShowPrompt(currentTarget.GetPromptText(), (currentTarget as MonoBehaviour).transform);
