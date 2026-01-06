@@ -74,10 +74,10 @@ public class CameraControl : MonoBehaviour
         }
 
         // Shoulder switching
-        if (switchShoulder != null && switchShoulder.action.WasPressedThisFrame())
-        {
-            rightShoulder = !rightShoulder;
-        }
+        //if (switchShoulder != null && switchShoulder.action.WasPressedThisFrame())
+        //{
+           // rightShoulder = !rightShoulder;
+        //}
 
         // Smooth shoulder offset transition
         float targetSide = rightShoulder ? 1f : -1f;

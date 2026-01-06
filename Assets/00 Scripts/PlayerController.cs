@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Camera")]
     public Transform cameraTransform;
-    public float moveSpeed = 5f;
+    public float moveSpeed = 1.3f;
     public float rotationSpeed = 10f;
     public float gravity = -9.81f;
     public float jumpHeight = 1.5f;
