@@ -3,6 +3,19 @@ using TMPro;
 
 public class SubtitleManager : MonoBehaviour
 {
+    #region Singleton
+    public static SubtitleManager Instance;
+    void Awake()
+    {
+        if (Instance != null &&  Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
+    #endregion
     public TextMeshProUGUI subtitleText;
     private SubtitleData currentData;
     private AudioSource audioSource;
