@@ -292,6 +292,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: room4
       objectReference: {fileID: 0}
+    - target: {fileID: 5848671120234587953, guid: 780ce1b64abcf2d45b99f4816d98bda9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b21e8293e2066b542aa0eeb7c93866b1, type: 2}
+    - target: {fileID: 5848671120234587953, guid: 780ce1b64abcf2d45b99f4816d98bda9, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b21e8293e2066b542aa0eeb7c93866b1, type: 2}
+    - target: {fileID: 5848671120234587953, guid: 780ce1b64abcf2d45b99f4816d98bda9, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b21e8293e2066b542aa0eeb7c93866b1, type: 2}
+    - target: {fileID: 5848671120234587953, guid: 780ce1b64abcf2d45b99f4816d98bda9, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b21e8293e2066b542aa0eeb7c93866b1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
