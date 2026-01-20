@@ -6,17 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Game/memories1.unity
-    guid: ad88b25213ad0974a96922cb6ab3aad5
-  - enabled: 1
-    path: Assets/Game/memories2 1.unity
-    guid: 2811ce9c3a1e324488439e7110007d1c
-  - enabled: 1
-    path: Assets/Game/memories2.unity
-    guid: f5331bb4a6e78d0419ef37d38d8c61cb
+    path: Assets/Diogo/SampleScene.unity
+    guid: 6334bbef7d36e764f9d1b091ad798a77
   m_configObjects:
+    com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
