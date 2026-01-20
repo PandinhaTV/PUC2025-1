@@ -4,30 +4,32 @@ using System.Collections;
 public class BlinkEyeDebug : MonoBehaviour
 {
     [Header("Shape Key / Blink")]
-    public SkinnedMeshRenderer skinnedMeshRenderer; // arraste seu mesh aqui
-    public int blendShapeIndex = 0; // índice do shape key do olho
-    public float minInterval = 2f; // intervalo mínimo entre piscadas
-    public float maxInterval = 5f; // intervalo máximo entre piscadas
-    public float blinkDuration = 0.1f; // duração do fechamento/abertura
+    public SkinnedMeshRenderer skinnedMeshRenderer; // arraste o mesh aqui
+    public int blendShapeIndex = 0;                 // índice do shape key do olho
+    public float minInterval = 2f;                  // intervalo mínimo entre piscadas
+    public float maxInterval = 5f;                  // intervalo máximo entre piscadas
+    public float blinkDuration = 0.1f;              // duração do fechamento/abertura
 
     [Header("Eye Light (Farol)")]
-    public Light eyeLight; // assign a Spot Light ou Point Light no olho
-    public float openIntensity = 5f; // intensidade máxima do “farol” quando aberto
-    public float closedIntensity = 0f; // intensidade quando fechado
-    public float lightFadeSpeed = 5f; // quão rápido a luz sobe/desce ao abrir/fechar
+    public Light eyeLight;                          // Spot ou Point Light no olho
+    public float openIntensity = 5f;                // intensidade máxima quando aberto
 
     private void Start()
     {
         if (skinnedMeshRenderer == null)
         {
-            Debug.LogError("SkinnedMeshRenderer não está atribuído!");
+            Debug.LogError("SkinnedMeshRenderer não atribuído!");
+            enabled = false;
             return;
         }
 
-        if (eyeLight != null)
-            eyeLight.intensity = closedIntensity; // garante que começa apagado
+        // Garantia inicial
+        skinnedMeshRenderer.SetBlendShapeWeight(blendShapeIndex, 0f);
 
-        StartCoroutine(BlinkRoutine(Random.Range(0f, 1f))); // offset inicial
+        if (eyeLight != null)
+            eyeLight.intensity = 0f;
+
+        StartCoroutine(BlinkRoutine(Random.Range(0f, 1f)));
     }
 
     private IEnumerator BlinkRoutine(float initialDelay)
@@ -36,49 +38,49 @@ public class BlinkEyeDebug : MonoBehaviour
 
         while (true)
         {
-            float waitTime = Random.Range(minInterval, maxInterval);
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSeconds(Random.Range(minInterval, maxInterval));
 
-            // Fecha o olho
-            yield return AnimateBlendShape(100f, blinkDuration);
-            if (eyeLight != null) StartCoroutine(FadeLight(closedIntensity, blinkDuration));
+            // Fecha
+            yield return AnimateBlink(100f);
 
-            // Abre o olho
-            yield return AnimateBlendShape(0f, blinkDuration);
-            if (eyeLight != null) StartCoroutine(FadeLight(openIntensity, blinkDuration));
+            // Abre
+            yield return AnimateBlink(0f);
         }
     }
 
-    private IEnumerator AnimateBlendShape(float targetValue, float duration)
+    private IEnumerator AnimateBlink(float target)
     {
-        float startValue = skinnedMeshRenderer.GetBlendShapeWeight(blendShapeIndex);
+        float start = skinnedMeshRenderer.GetBlendShapeWeight(blendShapeIndex);
         float elapsed = 0f;
 
-        while (elapsed < duration)
+        while (elapsed < blinkDuration)
         {
             elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration);
-            float value = Mathf.Lerp(startValue, targetValue, t);
+            float t = Mathf.Clamp01(elapsed / blinkDuration);
+            float value = Mathf.Lerp(start, target, t);
+
             skinnedMeshRenderer.SetBlendShapeWeight(blendShapeIndex, value);
+
+            // 🔑 CONTROLE ABSOLUTO DA LUZ
+            if (eyeLight != null)
+            {
+                if (value >= 99f)
+                {
+                    eyeLight.intensity = 0f;
+                }
+                else
+                {
+                    eyeLight.intensity = (1f - value / 100f) * openIntensity;
+                }
+            }
+
             yield return null;
         }
 
-        skinnedMeshRenderer.SetBlendShapeWeight(blendShapeIndex, targetValue);
-    }
+        // Garantia final (sem risco de frame errado)
+        skinnedMeshRenderer.SetBlendShapeWeight(blendShapeIndex, target);
 
-    private IEnumerator FadeLight(float targetIntensity, float duration)
-    {
-        float startIntensity = eyeLight.intensity;
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration);
-            eyeLight.intensity = Mathf.Lerp(startIntensity, targetIntensity, t);
-            yield return null;
-        }
-
-        eyeLight.intensity = targetIntensity;
+        if (eyeLight != null)
+            eyeLight.intensity = target >= 100f ? 0f : openIntensity;
     }
 }
