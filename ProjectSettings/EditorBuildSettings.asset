@@ -5,9 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Diogo/SampleScene.unity
     guid: 6334bbef7d36e764f9d1b091ad798a77
+  - enabled: 1
+    path: Assets/Game/Room new.unity
+    guid: ffee4621a73e04348a7c9468845abb18
+  - enabled: 1
+    path: Assets/Game/Corredor_01.unity
+    guid: cabd18e00f5f0554294c97472aa41c6b
+  - enabled: 1
+    path: Assets/Game/Corredor_02.unity
+    guid: 9219ace94f77b4f4484ce955f3289e1f
+  - enabled: 1
+    path: Assets/Game/Room2_new.unity
+    guid: 6202495fe0da4514b98171c5dc543c0f
+  - enabled: 1
+    path: Assets/00 Scripts/SceneController/Core.unity
+    guid: f4c55e9cdfae970479aac5aded4acb4d
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
