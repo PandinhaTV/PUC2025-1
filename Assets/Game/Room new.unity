@@ -119,6 +119,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &7906597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7342108055384283515, guid: 410cb062b10a4054190211b07ceb2a36, type: 3}
+  m_PrefabInstance: {fileID: 1403399189}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7906601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 10, y: 10}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &207111976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1111,7 +1131,7 @@ Transform:
   m_GameObject: {fileID: 944395441}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.887596, y: -3.935949, z: 7.2136965}
+  m_LocalPosition: {x: -2.887596, y: -3.06, z: 7.2136965}
   m_LocalScale: {x: 86.941536, y: 11.554, z: 25.733068}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1192,6 +1212,10 @@ PrefabInstance:
     - target: {fileID: 5895012852167208291, guid: 3a16f267ef20cc54aa1cd434b8c9a27c, type: 3}
       propertyPath: InitialModule.size3D
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5895012852167208291, guid: 3a16f267ef20cc54aa1cd434b8c9a27c, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     - target: {fileID: 5895012852167208291, guid: 3a16f267ef20cc54aa1cd434b8c9a27c, type: 3}
       propertyPath: InitialModule.maxNumParticles
@@ -1572,6 +1596,10 @@ PrefabInstance:
     - target: {fileID: 4334580638847011832, guid: 29d02517f34e82b43967d2700a48eaca, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579949178335451983, guid: 29d02517f34e82b43967d2700a48eaca, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2649,6 +2677,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 3682747241725114200, guid: 410cb062b10a4054190211b07ceb2a36, type: 3}
+    - target: {fileID: 6912702084147249950, guid: 410cb062b10a4054190211b07ceb2a36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -249.22
+      objectReference: {fileID: 0}
     - target: {fileID: 6927930967224786108, guid: 410cb062b10a4054190211b07ceb2a36, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2796,7 +2828,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7342108055384283515, guid: 410cb062b10a4054190211b07ceb2a36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7906601}
   m_SourcePrefab: {fileID: 100100000, guid: 410cb062b10a4054190211b07ceb2a36, type: 3}
 --- !u!1001 &1478757018
 PrefabInstance:
