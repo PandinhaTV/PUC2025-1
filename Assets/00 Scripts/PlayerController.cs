@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
     public InteractionUI interactionUI;
 
     private IInteractable currentTarget;
-
+[Header("Animator")]
+public Animator animator;
     void Awake() => controller = GetComponent<CharacterController>();
 
     void OnEnable()
@@ -51,17 +52,28 @@ public class PlayerController : MonoBehaviour
     {
         if (sprintAction.action.IsInProgress())
         {
+            
+            animator.SetBool("IsRunning", true);
             moveSpeed = 7.5f;
         }
         else
         {
+            
+            animator.SetBool("IsRunning", false);
             moveSpeed = 5f;
         }
         DetectNearbyInteractables();
         HandleInteraction();
 
         Vector2 input = moveAction.action.ReadValue<Vector2>();
-
+        if (input != Vector2.zero)
+        {
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
         // Ignore tiny inputs
         if (input.sqrMagnitude < 0.01f)
         {
