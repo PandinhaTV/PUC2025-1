@@ -10,7 +10,7 @@ public class CoreManager : MonoBehaviour
         //Load everything like audio Managers, Sava System
         SceneController.Instance
             .NewTransition()
-            .Load(SceneDatabase.Slots.Session, SceneDatabase.Scenes.Room1)
+            .Load(SceneDatabase.Slots.Session, SceneDatabase.Scenes.Test)
             .WithOverlay()
             .Perform();
     }
