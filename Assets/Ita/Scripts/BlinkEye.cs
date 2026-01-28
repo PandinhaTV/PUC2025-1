@@ -1,41 +1,41 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class BlinkEyeDebug : MonoBehaviour
+public class BlinkEye : MonoBehaviour
 {
     [Header("Shape Key / Blink")]
     public SkinnedMeshRenderer skinnedMeshRenderer;
-    public int blendShapeIndex = 0;
-    public float minInterval = 2f;
-    public float maxInterval = 5f;
-    public float blinkDuration = 0.15f; 
+    public int blendShapeIndex = 1; // Conforme sua imagem
+    public float minInterval = 3f;  // Conforme sua imagem
+    public float maxInterval = 6f;  // Conforme sua imagem
+    public float blinkDuration = 0.8f; // Conforme sua imagem
 
     [Header("Tempo de Olho Fechado")]
     public float closedDuration = 0.5f;
 
-    [Header("Componentes de Iluminação")]
-    public Light eyeLight;
-    public Renderer godRayRenderer; 
-    public float maxLightIntensity = 5f;
+    [Header("Luzes do Olho")]
+    public Light[] eyeLights; 
+    public Renderer godRayRenderer;
+    public float maxLightIntensity = 5f; // Ajuste o brilho aqui!
 
     private Material godRayMaterial;
-    private Color originalColor;
+    private Color godRayOriginalColor;
 
     private void Start()
     {
         if (skinnedMeshRenderer == null) return;
 
-        // Captura o material de forma segura
         if (godRayRenderer != null)
         {
             godRayMaterial = godRayRenderer.material;
-            originalColor = godRayMaterial.color;
+            godRayOriginalColor = godRayMaterial.HasProperty("_Color") ? godRayMaterial.color : Color.white;
         }
 
-        // Garante que a luz comece acesa
-        if (eyeLight != null) eyeLight.intensity = maxLightIntensity;
+        // Garante que comece aberto e com intensidade
+        UpdateEyeEffects(1f); 
 
-        StartCoroutine(BlinkRoutine(Random.Range(0f, 1f)));
+        StartCoroutine(BlinkRoutine(Random.Range(0f, 2f)));
     }
 
     private IEnumerator BlinkRoutine(float initialDelay)
@@ -46,57 +46,63 @@ public class BlinkEyeDebug : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(minInterval, maxInterval));
 
-            // Fecha e apaga
-            yield return AnimateBlink(100f);
+            // Fecha o olho (Anima do peso 0 para 100)
+            yield return AnimateBlink(0f, 100f);
 
             yield return new WaitForSeconds(closedDuration);
 
-            // Abre e acende
-            yield return AnimateBlink(0f);
+            // Abre o olho (Anima do peso 100 para 0)
+            yield return AnimateBlink(100f, 0f);
         }
     }
 
-    private IEnumerator AnimateBlink(float targetWeight)
+    private IEnumerator AnimateBlink(float startWeight, float targetWeight)
     {
-        float startWeight = skinnedMeshRenderer.GetBlendShapeWeight(blendShapeIndex);
         float elapsed = 0f;
 
         while (elapsed < blinkDuration)
         {
             elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / blinkDuration);
-            float currentWeight = Mathf.Lerp(startWeight, targetWeight, t);
+            float t = elapsed / blinkDuration;
+            
+            // Suaviza a piscada
+            float curveT = Mathf.SmoothStep(0, 1, t);
+            float currentWeight = Mathf.Lerp(startWeight, targetWeight, curveT);
 
             skinnedMeshRenderer.SetBlendShapeWeight(blendShapeIndex, currentWeight);
 
-            // VISIBILIDADE: 1 = Aberto/Aceso, 0 = Fechado/Apagado
+            // Sincroniza a luz com o movimento da pálpebra
+            // Se peso é 100 (fechado), visibilidade é 0
             float visibility = 1f - (currentWeight / 100f);
-
-            // Atualiza a Luz
-            if (eyeLight != null)
-            {
-                eyeLight.intensity = visibility * maxLightIntensity;
-                // Força a luz a ficar ativa se a visibilidade for maior que 0
-                eyeLight.enabled = (eyeLight.intensity > 0.01f);
-            }
-
-            // Atualiza o God Ray
-            if (godRayMaterial != null)
-            {
-                Color c = originalColor;
-                c.a = visibility * originalColor.a;
-                godRayMaterial.color = c;
-            }
+            UpdateEyeEffects(visibility);
 
             yield return null;
         }
 
-        // Ajuste Final de Segurança
         skinnedMeshRenderer.SetBlendShapeWeight(blendShapeIndex, targetWeight);
-        if (eyeLight != null) 
+    }
+
+    private void UpdateEyeEffects(float visibility)
+    {
+        // Controla as Luzes
+        if (eyeLights != null)
         {
-            eyeLight.intensity = (targetWeight <= 0) ? maxLightIntensity : 0f;
-            eyeLight.enabled = (targetWeight <= 0);
+            foreach (Light l in eyeLights)
+            {
+                if (l != null)
+                {
+                    l.intensity = visibility * maxLightIntensity;
+                    l.enabled = l.intensity > 0.01f;
+                }
+            }
+        }
+
+        // Controla o God Ray (Transparência)
+        if (godRayMaterial != null)
+        {
+            Color c = godRayOriginalColor;
+            c.a = visibility * godRayOriginalColor.a;
+            godRayMaterial.color = c;
         }
     }
 }
