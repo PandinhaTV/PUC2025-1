@@ -1201,6 +1201,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 7.31
       objectReference: {fileID: 0}
+    - target: {fileID: 4548513773393548148, guid: d397a73208093084aa2120968fe2f05b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1921826454}
     - target: {fileID: 7242296695948058528, guid: d397a73208093084aa2120968fe2f05b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.4
@@ -1490,6 +1494,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 5.51
       objectReference: {fileID: 0}
+    - target: {fileID: 4548513773393548148, guid: d397a73208093084aa2120968fe2f05b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1921826454}
     - target: {fileID: 7242296695948058528, guid: d397a73208093084aa2120968fe2f05b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.15
@@ -1540,6 +1548,11 @@ MonoBehaviour:
   anisotropy: -0.567
   scattering: 3.75
   radius: 0.297
+--- !u!1 &1921826454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4334580638847011832, guid: 29d02517f34e82b43967d2700a48eaca, type: 3}
+  m_PrefabInstance: {fileID: 645677835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1971297538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 120369967760336966, guid: d397a73208093084aa2120968fe2f05b, type: 3}
@@ -1678,6 +1691,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -2.4
       objectReference: {fileID: 0}
+    - target: {fileID: 4548513773393548148, guid: d397a73208093084aa2120968fe2f05b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1921826454}
     - target: {fileID: 7242296695948058528, guid: d397a73208093084aa2120968fe2f05b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.66
@@ -1779,6 +1796,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 5.51
       objectReference: {fileID: 0}
+    - target: {fileID: 4548513773393548148, guid: d397a73208093084aa2120968fe2f05b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1921826454}
     - target: {fileID: 7242296695948058528, guid: d397a73208093084aa2120968fe2f05b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.43

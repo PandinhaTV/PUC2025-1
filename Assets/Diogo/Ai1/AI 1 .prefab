@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 8444913313732451883}
   - component: {fileID: 173319249392413473}
   - component: {fileID: 274509948611091212}
+  - component: {fileID: 4548513773393548148}
   m_Layer: 0
   m_Name: 'EnemyAI 1 '
   m_TagString: Untagged
@@ -303,6 +304,18 @@ MonoBehaviour:
         - {fileID: 8789779476313525248}
         - {fileID: 4058924697254766151}
         - {fileID: 1766156207751587071}
+--- !u!114 &4548513773393548148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4536214053342943083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5aef276db6d1094f81ed6200d70910f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6629076645874742211
 GameObject:
   m_ObjectHideFlags: 0
