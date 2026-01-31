@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3a94c0d14ea0146a5cfd133f70b89e, type: 3}
+  m_Name: Corridor02
+  m_EditorClassIdentifier: 
+  voiceClip: {fileID: 8300000, guid: a58f5f3e092154c4eb6e1a60b3c89bcd, type: 3}
+  lines:
+  - text: You made it out.
+    startTime: 0
+    endTime: 2
+  - text: "I could tell there was so much around me\u2026  I wonder how big this
+      place is."
+    startTime: 2
+    endTime: 9
+  - text: ' Watcher:As big as you can imagine.'
+    startTime: 10
+    endTime: 11
+  - text: Do you know a lot about this place?
+    startTime: 11
+    endTime: 12
+  - text: "Watcher: No, not at all.  I\u2019m sure you know much more than I do."
+    startTime: 12
+    endTime: 19
+  - text: "Right\u2026  I don\u2019t know why I\u2019m talking to voices in my head\u2026"
+    startTime: 20
+    endTime: 24
+  - text: 'Watcher: Oh, come on. Firstly, you can call us The Watcher. '
+    startTime: 25
+    endTime: 29
+  - text: Secondly, everyone needs a friend in stressful times.  Indulge us a bit
+      more, what did you think about that place?
+    startTime: 30
+    endTime: 35
