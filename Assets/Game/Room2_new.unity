@@ -890,6 +890,10 @@ PrefabInstance:
       value: bell
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 720fc9724ece4454da21173c60923df9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 720fc9724ece4454da21173c60923df9, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -1208,6 +1212,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8791635886462695080, guid: 99d16d980c3748446a62fd97340da84f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c920abad4ffe4c34f8850057a3c2ae2a, type: 2}
     - target: {fileID: -8383668495584591269, guid: 99d16d980c3748446a62fd97340da84f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1812,6 +1820,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 647d9a2d0d5c14f42866432ac101e9bb, type: 2}
+    - target: {fileID: 7178390346684107605, guid: 99d16d980c3748446a62fd97340da84f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7230587208582541622, guid: 99d16d980c3748446a62fd97340da84f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
