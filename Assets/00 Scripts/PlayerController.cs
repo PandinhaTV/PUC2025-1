@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,9 +25,9 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     [Header("UI")]
-    public InteractionUI interactionUI;
-
-    private IInteractable currentTarget;
+    public GameObject interactionUI;
+    public TextMeshProUGUI interactionText;
+    
 [Header("Animator")]
 public Animator animator;
     void Awake() => controller = GetComponent<CharacterController>();
@@ -62,8 +63,7 @@ public Animator animator;
             animator.SetBool("IsRunning", false);
             moveSpeed = 5f;
         }
-        DetectNearbyInteractables();
-        HandleInteraction();
+        InteractionSphere();
 
         Vector2 input = moveAction.action.ReadValue<Vector2>();
         if (input != Vector2.zero)
@@ -104,49 +104,42 @@ public Animator animator;
         if (isGrounded && velocity.y < 0)
             velocity.y = -2f;
 
-        if (jumpAction.action.WasPressedThisFrame() && isGrounded)
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+       //if (jumpAction.action.WasPressedThisFrame() && isGrounded)
+          //  velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 
-    void DetectNearbyInteractables()
-    {
-        Collider[] hits = Physics.OverlapSphere(transform.position, interactRadius, interactableMask);
-        IInteractable closest = null;
-        float closestDist = float.MaxValue;
+    
 
-        foreach (Collider hit in hits)
+    void InteractionSphere()
+    {
+        bool hitSomething = false;
+
+        Collider[] hits = Physics.OverlapSphere(
+            transform.position,
+            interactRadius
+        );
+
+        for (int i = 0; i < hits.Length; i++)
         {
-            if (hit.TryGetComponent<IInteractable>(out IInteractable interactable))
+            IInteractable interactable = hits[i].GetComponent<IInteractable>();
+            if (interactable != null)
             {
-                
-                float dist = Vector3.Distance(transform.position, hit.transform.position);
-                if (dist < closestDist)
+                hitSomething = true;
+                interactionText.text = interactable.GetDescription();
+
+                if (interactAction.action.WasPressedThisFrame())
                 {
-                    
-                    closest = interactable;
-                    closestDist = dist;
+                    interactable.Interact();
                 }
+
+                break; // stop after the first valid interactable
             }
         }
 
-        if (closest != currentTarget)
-        {
-            
-            currentTarget = closest;
-            if (currentTarget != null)
-                interactionUI.ShowPrompt(currentTarget.GetPromptText(), (currentTarget as MonoBehaviour).transform);
-            else
-                interactionUI.HidePrompt();
-        }
-    }
-
-    void HandleInteraction()
-    {
-        if (currentTarget != null && interactAction.action.WasPressedThisFrame())
-            currentTarget.Interact(gameObject);
+        interactionUI.SetActive(hitSomething);
     }
 
     void OnDrawGizmosSelected()
