@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 public class CameraControl : MonoBehaviour
 {
     [Header("Collision")] public LayerMask collisionMask; // Layers considered obstacles (e.g., Environment)
@@ -25,6 +26,7 @@ public class CameraControl : MonoBehaviour
     public float autoAlignDelay = 3f; // Seconds before auto-align starts
     public float autoAlignSpeed = 2f; // How fast the camera realigns
 
+    public Camera camera;
     private float yaw;
     private float pitch;
     private bool rightShoulder = true;
@@ -38,6 +40,7 @@ public class CameraControl : MonoBehaviour
     void Start()
     {
         currentDistance = distance;
+        ForceURPVolumeRefresh(camera);
     }
 
     void OnEnable()
@@ -146,4 +149,14 @@ public class CameraControl : MonoBehaviour
                 Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime / rotationSmoothTime);
         
     }
+    
+
+    private void ForceURPVolumeRefresh(Camera cam)
+    {
+        if (cam.TryGetComponent<UniversalAdditionalCameraData>(out var data))
+        {
+            data.requiresColorOption = CameraOverrideOption.On; // triggers rebuild
+        }
+    }
+
 }

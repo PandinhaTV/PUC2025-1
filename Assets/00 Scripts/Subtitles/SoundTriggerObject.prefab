@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 7561185063719896287}
-  subtitleData: {fileID: 0}
+  subtitleData: {fileID: 11400000, guid: 88ca64f89e6a2c642be8fee06722d42e, type: 2}
   played: 0
 --- !u!65 &2273441161448116745
 BoxCollider:
