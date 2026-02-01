@@ -7,7 +7,7 @@ public class ProfileData
 {
     [Header("Profile")]
     public string profileId;
-    public int level;
+    public string level;
 
 }
 

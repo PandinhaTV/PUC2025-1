@@ -11,7 +11,7 @@ public static class SceneDatabase
 
     public class Scenes
     {
-        public const string MainMenu = "MainMenu";
+        public const string MainMenu = "Main Menu";
         public const string Session = "Session";
         public const string Test = "SampleScene";
         public const string Room1 = "Room new";

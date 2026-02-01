@@ -10,10 +10,11 @@ public class SaveManager : MonoBehaviour
     public ProfileData currentProfile;
     private float autosaveInterval = 300f; // 5 minutes = 300 seconds
     string savePath;
+    public bool existsfile = false;
 
     void Start()
     {
-       // CreateProfile("test");
+       Load();
     }
     void Awake()
     {
@@ -38,12 +39,13 @@ public class SaveManager : MonoBehaviour
         {
             string json = File.ReadAllText(savePath);
             saveData = JsonUtility.FromJson<SaveData>(json);
+            existsfile = true;
         }
-        else
+       /* else
         {
-            saveData = new SaveData();
+            saveData = new SaveData();s
             Save();
-        }
+        }*/
         
     }
 
@@ -58,7 +60,7 @@ public class SaveManager : MonoBehaviour
         ProfileData profile = new ProfileData
         {
             profileId = System.Guid.NewGuid().ToString(),
-            level = 1
+            level = "Corridor1"
         };
         Debug.Log(profile.profileId);
         saveData.profiles.Add(profile);

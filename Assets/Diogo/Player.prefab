@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 8280254805329523383}
   - component: {fileID: 7123143258540346710}
   - component: {fileID: 84348067774846470}
+  - component: {fileID: 2473922701118067381}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -305,6 +306,23 @@ MonoBehaviour:
   autoAlignDelay: 3
   autoAlignSpeed: 2
   camera: {fileID: 0}
+--- !u!114 &2473922701118067381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993943107251757897}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: ab40c610c715a3847b5727e14641fd23, type: 2}
 --- !u!1 &2352003911171476089
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,10 +355,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3050743402507600846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 149.59, y: -45}
+  m_SizeDelta: {x: 169.18, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7288227048343224957
 CanvasRenderer:
@@ -569,7 +587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6169126291577025770
 RectTransform:
   m_ObjectHideFlags: 0
@@ -700,7 +718,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -435.31}
-  m_SizeDelta: {x: 0, y: 90}
+  m_SizeDelta: {x: 239.18, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &583659183359875982
 MonoBehaviour:
@@ -851,7 +869,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 687f34b64fa6ac74d85bc5823dd6b07f, type: 2}
+  - {fileID: 2100000, guid: 17735a789997b3f4ca5cd30339566589, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -946,8 +964,8 @@ MonoBehaviour:
   rotationSpeed: 10
   gravity: -9.81
   jumpHeight: 1.5
-  interactionUI: {fileID: 0}
-  interactionText: {fileID: 0}
+  interactionUI: {fileID: 3681581204513718386}
+  interactionText: {fileID: 3715328894655885665}
   animator: {fileID: 4508438239168131094}
 --- !u!1 &4445023325990173524
 GameObject:
@@ -1136,10 +1154,10 @@ RectTransform:
   - {fileID: 3480736229671286246}
   m_Father: {fileID: 3050743402507600846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -45}
+  m_SizeDelta: {x: 50, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2091872465527314519
 CanvasRenderer:
@@ -1339,12 +1357,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7475559852216873799, guid: 6bf1b5b2010c47943940fe967f7f8deb, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e77de0f3159206349b72e947830c2b48, type: 2}
     - target: {fileID: -4268549521053294436, guid: 6bf1b5b2010c47943940fe967f7f8deb, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 663ead0d72798ec40ab1375c0c4087fc, type: 2}
     - target: {fileID: -1206874426333947015, guid: 6bf1b5b2010c47943940fe967f7f8deb, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d4b7d79ba7892844a168a60c1ed934f, type: 2}
+    - target: {fileID: -1206874426333947015, guid: 6bf1b5b2010c47943940fe967f7f8deb, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 2d4b7d79ba7892844a168a60c1ed934f, type: 2}
     - target: {fileID: 919132149155446097, guid: 6bf1b5b2010c47943940fe967f7f8deb, type: 3}
