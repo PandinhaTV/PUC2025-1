@@ -10,13 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd3a94c0d14ea0146a5cfd133f70b89e, type: 3}
-  m_Name: room3
+  m_Name: Corridor03
   m_EditorClassIdentifier: 
-  voiceClip: {fileID: 8300000, guid: e15dc1ab76cf16c4293f20641981e220, type: 3}
+  voiceClip: {fileID: 8300000, guid: 8c5b804616db2a649bb9b9220ac32c26, type: 3}
   lines:
-  - text: "Priest: Show yourself\u2026"
+  - text: "Very interesting\u2026  Now, moving on!"
     startTime: 0
     endTime: 3
-  - text: "Who the hell is that..?! \u2026Watcher?? Where are you?? \u2026Dammit!"
-    startTime: 4
-    endTime: 9

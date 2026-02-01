@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd3a94c0d14ea0146a5cfd133f70b89e, type: 3}
-  m_Name: room3
+  m_Name: room3 1
   m_EditorClassIdentifier: 
-  voiceClip: {fileID: 8300000, guid: e15dc1ab76cf16c4293f20641981e220, type: 3}
+  voiceClip: {fileID: 8300000, guid: 6ec3e4f9b8fe9cf40b6c548e61fd64bf, type: 3}
   lines:
-  - text: "Priest: Show yourself\u2026"
+  - text: "Priest: May He forgive you, child\u2026  for I do not have it in me!"
     startTime: 0
-    endTime: 3
-  - text: "Who the hell is that..?! \u2026Watcher?? Where are you?? \u2026Dammit!"
-    startTime: 4
-    endTime: 9
+    endTime: 4
+  - text: You are disgusting!  She is disgusting!
+    startTime: 5
+    endTime: 8
