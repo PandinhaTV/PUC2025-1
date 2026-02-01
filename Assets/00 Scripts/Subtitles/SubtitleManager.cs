@@ -20,6 +20,7 @@ public class SubtitleManager : MonoBehaviour
     private SubtitleData currentData;
     private AudioSource audioSource;
     private int currentLineIndex;
+    public bool activateSubtitles = true;
 
     void Update()
     {
@@ -46,10 +47,14 @@ public class SubtitleManager : MonoBehaviour
 
     public void PlaySubtitles(SubtitleData data, AudioSource source)
     {
-        currentData = data;
-        audioSource = source;
-        currentLineIndex = 0;
-        subtitleText.text = "";
+        if (activateSubtitles)
+        {
+           currentData = data;
+                   audioSource = source;
+                   currentLineIndex = 0;
+                   subtitleText.text = ""; 
+        }
+        
     }
 }
 
