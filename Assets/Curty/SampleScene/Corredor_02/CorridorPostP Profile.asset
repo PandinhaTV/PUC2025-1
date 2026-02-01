@@ -145,7 +145,6 @@ MonoBehaviour:
   - {fileID: -4822803382258362818}
   - {fileID: 3474378152784059662}
   - {fileID: -7140351980616080985}
-  - {fileID: -2964206355742612158}
   - {fileID: 4720853873880829018}
 --- !u!114 &952636947524259793
 MonoBehaviour:
@@ -202,10 +201,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 1.75
+    m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 65.1
+    m_Value: 25
   colorFilter:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
