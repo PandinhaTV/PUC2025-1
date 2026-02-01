@@ -18,7 +18,7 @@ MonoBehaviour:
     startTime: 0
     endTime: 3
   - text: "It\u2019s so dark in here\u2026"
-    startTime: 3
+    startTime: 5
     endTime: 6
   - text: Keep your ears open.  You must find the key out of this place.
     startTime: 6
