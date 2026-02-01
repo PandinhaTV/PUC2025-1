@@ -15,7 +15,7 @@ public static class SceneDatabase
         public const string Session = "Session";
         public const string Test = "SampleScene";
         public const string Room1 = "Room new";
-        public const string Room2 = "Room2";
+        public const string Room2 = "Room2_new";
         public const string Room3 = "Room3 1";
         public const string Room4 = "Room4";
         public const string Corridor1 = "Corridor_1";

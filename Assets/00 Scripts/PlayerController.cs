@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -30,7 +31,13 @@ public class PlayerController : MonoBehaviour
     
 [Header("Animator")]
 public Animator animator;
-    void Awake() => controller = GetComponent<CharacterController>();
+
+void Awake()
+{
+    controller = GetComponent<CharacterController>();
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
+} 
 
     void OnEnable()
     {
