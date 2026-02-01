@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3a94c0d14ea0146a5cfd133f70b89e, type: 3}
+  m_Name: room2 2
+  m_EditorClassIdentifier: 
+  voiceClip: {fileID: 8300000, guid: 3638918418da10f45b03bb3bfe0d7d3f, type: 3}
+  lines:
+  - text: In my attempts to hold on to you, I somehow lost sight of reason.
+    startTime: 0
+    endTime: 3
+  - text: ' What were we supposed to do with ourselves  in a place like this? They
+      were always watching.'
+    startTime: 4
+    endTime: 9
+  - text: "All I wanted was to swallow your feelings completely and keep you close
+      to me.  I wanted to take it all in\u2026"
+    startTime: 10
+    endTime: 17
+  - text: "but it got stuck in my throat... and it\u2019s still stuck there.  I\u2019m
+      afraid that if I let it out now, it will come out ugly and deformed."
+    startTime: 18
+    endTime: 24
+  - text: "Since I last saw you, something has been tearing at my chest from within. 
+      I\u2019ve stopped believing it will ever let me go. "
+    startTime: 25
+    endTime: 31
+  - text: "If there is still a heart in me\u2026 then it belongs to you.  Piece by
+      piece you ate away what remained of me."
+    startTime: 32
+    endTime: 39
+  - text: "and now you\u2019re rising\u2026 higher\u2026 towards my throat."
+    startTime: 40
+    endTime: 48

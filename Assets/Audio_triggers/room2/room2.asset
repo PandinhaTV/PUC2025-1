@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3a94c0d14ea0146a5cfd133f70b89e, type: 3}
   m_Name: room2
   m_EditorClassIdentifier: 
-  voiceClip: {fileID: 8300000, guid: 4db1f3cb58b3ad54bbade2c55cabd01f, type: 3}
+  voiceClip: {fileID: 8300000, guid: e0fd2203f7d0d114da9b771cd95b548b, type: 3}
   lines:
-  - text: "We will be back\u2026"
+  - text: "This place gives me the creeps, Watcher\u2026"
     startTime: 0
     endTime: 3
+  - text: "Watcher: There\u2019s nothing for you to worry about\u2026 I\u2019m sure."
+    startTime: 4
+    endTime: 7
