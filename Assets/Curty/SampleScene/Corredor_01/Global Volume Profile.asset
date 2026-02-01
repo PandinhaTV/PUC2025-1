@@ -111,7 +111,7 @@ MonoBehaviour:
     dimension: 1
   dirtIntensity:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 2
 --- !u!114 &-876323243399422486
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -160,7 +160,6 @@ MonoBehaviour:
   - {fileID: 1309069092231955414}
   - {fileID: -6790809479158354329}
   - {fileID: 6109847957960151278}
-  - {fileID: 8631296447330744063}
 --- !u!114 &1309069092231955414
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -176,13 +175,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.6745788, y: 0.79664695, z: 1, w: 0}
+    m_Value: {x: 1, y: 0.97630805, z: 0.93396556, w: 0}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9118998, z: 0.9594986, w: 0}
+    m_Value: {x: 0.9186243, y: 0.9478583, z: 1, w: 0}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 0.6879587, y: 0.7774039, z: 1, w: 0}
+    m_Value: {x: 1, y: 0.9924553, z: 0.80447245, w: 0}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0

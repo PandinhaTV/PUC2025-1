@@ -90,10 +90,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 1.5
+    m_Value: 1
   contrast:
     m_OverrideState: 1
-    m_Value: 20.3
+    m_Value: 30
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -159,13 +159,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.949557, y: 1, z: 0.8201389, w: 0}
+    m_Value: {x: 1, y: 0.94097954, z: 0.81105196, w: 0}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 0.73137933, y: 1, z: 0.713379, w: 0}
+    m_Value: {x: 0.95576626, y: 1, z: 0.8506676, w: 0}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 0.8788878, y: 1, z: 0.8443921, w: 0}
+    m_Value: {x: 0.9393053, y: 1, z: 0.7171507, w: 0}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -199,7 +199,6 @@ MonoBehaviour:
   - {fileID: -696956889523027656}
   - {fileID: -2986554805966502574}
   - {fileID: 3016601959193547011}
-  - {fileID: 6780552616680328811}
 --- !u!114 &3000174614320498061
 MonoBehaviour:
   m_ObjectHideFlags: 3

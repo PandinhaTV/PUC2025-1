@@ -189,10 +189,10 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.5698112, g: 0.5192808, b: 0.5192808, a: 1}
+    m_Value: {r: 0.4716981, g: 0.44410822, b: 0.44410822, a: 1}
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 0.5358134, g: 0.6528301, b: 0.65055346, a: 1}
+    m_Value: {r: 0.5372549, g: 0.6509804, b: 0.64043576, a: 1}
   balance:
     m_OverrideState: 0
     m_Value: 0
@@ -239,12 +239,12 @@ MonoBehaviour:
     m_Value: 1
   contrast:
     m_OverrideState: 1
-    m_Value: 25
+    m_Value: 40
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   saturation:
     m_OverrideState: 1
@@ -303,7 +303,6 @@ MonoBehaviour:
   - {fileID: -1914552433861744709}
   - {fileID: -4036320692482954322}
   - {fileID: -1930682983599688438}
-  - {fileID: -4688572505769449311}
 --- !u!114 &2900333680422751484
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -350,7 +349,7 @@ MonoBehaviour:
     dimension: 1
   dirtIntensity:
     m_OverrideState: 1
-    m_Value: 0.76
+    m_Value: 0.57
 --- !u!114 &4561095185218507759
 MonoBehaviour:
   m_ObjectHideFlags: 3
