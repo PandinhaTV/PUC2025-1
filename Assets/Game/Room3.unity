@@ -2117,7 +2117,6 @@ PrefabInstance:
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62cb8e28b379b0448bf9e074d43870f7, type: 3}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 --- !u!1001 &1238846628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2200,8 +2199,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 849877375949815880, guid: 58aee4595acaf6945952f133b53a2f47, type: 3}
   m_PrefabInstance: {fileID: 1238846628}
 =======
-=======
->>>>>>> Stashed changes
 --- !u!4 &1179100822 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6247030472233574214, guid: 62cb8e28b379b0448bf9e074d43870f7, type: 3}
@@ -2211,9 +2208,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8329430408214481124, guid: 917d1efbb290bf1498a7b9e6ed71adbf, type: 3}
   m_PrefabInstance: {fileID: 1036864888}
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1333627312 stripped
@@ -2670,11 +2664,7 @@ Transform:
   m_PrefabInstance: {fileID: 2035100766}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 --- !u!1001 &1977834943
-=======
---- !u!1001 &1973352576
->>>>>>> Stashed changes
 =======
 --- !u!1001 &1973352576
 >>>>>>> Stashed changes
@@ -2683,7 +2673,6 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     m_TransformParent: {fileID: 866797006}
     m_Modifications:
@@ -2752,8 +2741,6 @@ PrefabInstance:
       value: SoundTriggerObject (1)
       objectReference: {fileID: 0}
 =======
-=======
->>>>>>> Stashed changes
     m_TransformParent: {fileID: 1179100822}
     m_Modifications:
     - target: {fileID: 2701562687262556285, guid: 917d1efbb290bf1498a7b9e6ed71adbf, type: 3}
@@ -2812,15 +2799,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_SourcePrefab: {fileID: 100100000, guid: 58aee4595acaf6945952f133b53a2f47, type: 3}
 --- !u!4 &1977834944 stripped
@@ -2828,9 +2811,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 849877375949815880, guid: 58aee4595acaf6945952f133b53a2f47, type: 3}
   m_PrefabInstance: {fileID: 1977834943}
   m_PrefabAsset: {fileID: 0}
-=======
-  m_SourcePrefab: {fileID: 100100000, guid: 917d1efbb290bf1498a7b9e6ed71adbf, type: 3}
->>>>>>> Stashed changes
 =======
   m_SourcePrefab: {fileID: 100100000, guid: 917d1efbb290bf1498a7b9e6ed71adbf, type: 3}
 >>>>>>> Stashed changes
