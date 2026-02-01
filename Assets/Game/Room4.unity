@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 440154130}
   - component: {fileID: 440154129}
   - component: {fileID: 440154128}
+  - component: {fileID: 440154131}
   m_Layer: 0
   m_Name: Point Light (2)
   m_TagString: Untagged
@@ -310,6 +311,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &440154131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440154126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd8b77023bda084ababc90b22874f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseIntensity: 8
+  intensityVariation: 2
+  baseRange: 10
+  rangeVariation: 2
+  flickerSpeed: 3
 --- !u!1 &476329843 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7804473220502073000, guid: 96f24fdb928911f4e998ac176a6c9dfd, type: 3}
@@ -1031,6 +1049,7 @@ GameObject:
   - component: {fileID: 889582287}
   - component: {fileID: 889582286}
   - component: {fileID: 889582285}
+  - component: {fileID: 889582288}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -1156,6 +1175,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &889582288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889582283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd8b77023bda084ababc90b22874f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseIntensity: 8
+  intensityVariation: 2
+  baseRange: 10
+  rangeVariation: 2
+  flickerSpeed: 3
 --- !u!1 &930563054
 GameObject:
   m_ObjectHideFlags: 0
