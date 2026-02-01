@@ -34,12 +34,12 @@ public class MainMenu : MonoBehaviour
        
     }
 
-    void Continue()
+    /*void Continue()
     {
         SceneController.Instance.NewTransition()
-            .Load(SceneDatabase.Slots.Session, SceneDatabase.Scenes.[SaveManager.Instance.currentProfile.level])
+            .Load(SceneDatabase.Slots.Session, SceneDatabase.Scenes.)
             .WithOverlay().Perform();
-    }
+    }*/
     void NewGame()
     {
         SaveManager.Instance.CreateProfile("Player1");
