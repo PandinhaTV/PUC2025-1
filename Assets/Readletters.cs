@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class GoNextLevel : MonoBehaviour, IInteractable
+public class Readletters : MonoBehaviour, IInteractable
 {
+    public AudioSource audioSource;
+    
+    public SubtitleData subtitleData;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,15 +21,13 @@ public class GoNextLevel : MonoBehaviour, IInteractable
     public void Interact()
     {
         
-        SceneController.Instance
-            .NewTransition()
-            .Load(SceneDatabase.Slots.Session, SceneDatabase.Scenes.Room1)
-            .WithOverlay()
-            .Perform();
+        audioSource.clip = subtitleData.voiceClip;
+        audioSource.Play();
+        SubtitleManager.Instance.PlaySubtitles(subtitleData, audioSource);
     }
 
     public string GetDescription()
     {
-        return "Go to next level";
+        throw new System.NotImplementedException();
     }
 }
