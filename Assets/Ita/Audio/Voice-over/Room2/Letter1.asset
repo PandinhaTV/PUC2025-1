@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3a94c0d14ea0146a5cfd133f70b89e, type: 3}
+  m_Name: Letter1
+  m_EditorClassIdentifier: 
+  voiceClip: {fileID: 8300000, guid: 79e0e982ba9a63640ac70244587a31fb, type: 3}
+  lines:
+  - text: "You must have heard the news about my expulsion by now\u2026"
+    startTime: 2
+    endTime: 5
+  - text: "It\u2019s far too late to do anything about it so just finish reading
+      what I have to say"
+    startTime: 7
+    endTime: 11
+  - text: " I know you aren\u2019t much of a sentimentalist but..."
+    startTime: 12
+    endTime: 15
+  - text: My heart has fallen ill.
+    startTime: 15
+    endTime: 17
+  - text: " And it\u2019s been numb for a long time."
+    startTime: 15
+    endTime: 19
+  - text: " I can\u2019t help but miss you already."
+    startTime: 21
+    endTime: 23
+  - text: I was selfish...
+    startTime: 24
+    endTime: 25
+  - text: 'I tried to keep you at my fingertips without thinking about the consequences. '
+    startTime: 24
+    endTime: 29
+  - text: How much you would suffer the day they found out.
+    startTime: 29
+    endTime: 33
+  - text: " Since I left, I\u2019ve been keeping my hands in my pockets..."
+    startTime: 33
+    endTime: 37
+  - text: "hoping your warmth wouldn\u2019t fade away. "
+    startTime: 37
+    endTime: 39
+  - text: "hoping your warmth wouldn\u2019t fade away. "
+    startTime: 37
+    endTime: 39

@@ -1,12 +1,21 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Video;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject ContinueButton;
-
+    public InputActionReference jumpAction;
     public VideoPlayer Video;
     public AudioSource Audio;
+
+    private void OnEnable()
+    {
+        jumpAction.action.Enable();
+    }
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +30,11 @@ public class MainMenu : MonoBehaviour
             Debug.Log("File Doesn't Exists");
             ContinueButton.SetActive(false);
         }
-        //if (Input.GetKeyDown(KeyCode.Space))
+
+        if (jumpAction.action.WasPressedThisFrame())
+        {
+            NewGame();
+        }
     }
 
     private void OnVideoEnd(VideoPlayer vp)

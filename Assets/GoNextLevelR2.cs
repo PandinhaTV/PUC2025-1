@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GoNextLevelR2 : MonoBehaviour
+public class GoNextLevelR2 : MonoBehaviour, IInteractable
 {
     public void Interact()
     {

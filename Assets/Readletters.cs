@@ -24,10 +24,11 @@ public class Readletters : MonoBehaviour, IInteractable
         audioSource.clip = subtitleData.voiceClip;
         audioSource.Play();
         SubtitleManager.Instance.PlaySubtitles(subtitleData, audioSource);
+        
     }
 
     public string GetDescription()
     {
-        throw new System.NotImplementedException();
+        return "Read letter";
     }
 }
